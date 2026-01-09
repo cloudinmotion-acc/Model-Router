@@ -6,8 +6,16 @@
 !Dockerfile
 !app/
 !app/**
+!terraform/
+!terraform/**
+
+
 
 # Exclude unwanted files and folders
+*.terraform*
+*.tfstate
+*.tfstate.backup
+*.tfvars
 __pycache__/
 *.pyc
 *.pyo
