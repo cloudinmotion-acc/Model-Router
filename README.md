@@ -42,13 +42,13 @@ Test the server from the terminal
 curl -X POST http://localhost:8000/generate \
   -H "Content-Type: application/json" \
   -d '{
-    "prompt": "Explain Terraform like I am 15",
-    "model": "gpt-5-nano"
+    "prompt": "Say hello like a pirate",
+    "model": "gpt-4o"
   }'
-
 ```
 
 
+```bash
 sudo docker tag model-router:latest infraraja18/main-proj-acc:v0.1
 sudo docker push infraraja18/main-proj-acc:v0.1
-
+```

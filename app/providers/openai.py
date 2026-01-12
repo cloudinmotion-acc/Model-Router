@@ -1,16 +1,22 @@
-from openai import OpenAI
-from app.config import OPENAI_API_KEY
+import os
+from openai import AsyncOpenAI
+from .base import BaseProvider
 
-if not OPENAI_API_KEY:
-    raise RuntimeError("*******************************************OPENAI_API_KEY is not set*******************************************")
 
-client = OpenAI(api_key=OPENAI_API_KEY)
+class OpenAIProvider(BaseProvider):
 
-def generate(prompt: str, model: str) -> str:
-    response = client.chat.completions.create(
-        model=model,
-        messages=[
-            {"role": "user", "content": prompt}
-        ]
-    )
-    return response.choices[0].message.content or ""
+    def __init__(self):
+        self.client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+    async def generate(self, prompt: str, model: str, parameters: dict):
+        response = await self.client.chat.completions.create(
+            model=model,
+            messages=[{"role": "user", "content": prompt}],
+            **parameters
+        )
+
+        return {
+            "text": response.choices[0].message.content,
+            "model": model,
+            "usage": response.usage.model_dump()
+        }

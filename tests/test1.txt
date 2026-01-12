@@ -1,6 +1,0 @@
-curl -X POST http://localhost:8000/generate \
-  -H "Content-Type: application/json" \
-  -d '{
-    "prompt": "Explain Terraform like I am 15",
-    "model": "gpt-5-nano"
-  }'
