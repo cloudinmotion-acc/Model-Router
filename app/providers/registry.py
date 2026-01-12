@@ -1,8 +1,6 @@
-from .openai import OpenAIProvider
+from app.providers.openai import OpenAIProvider
 
-
-PROVIDERS = {
-    "openai": OpenAIProvider(),
-    # "gemini": GeminiProvider(),   # stub
-    # "anthropic": AnthropicProvider()
-}
+def get_provider(name: str):
+    if name == "openai":
+        return OpenAIProvider()
+    raise ValueError(f"Unknown provider: {name}")

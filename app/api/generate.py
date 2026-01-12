@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from app.schemas import GenerateRequest, GenerateResponse
 from app.config.loader import load_router_config
-from app.providers.registry import PROVIDERS
+from app.providers.registry import get_provider
 
 router = APIRouter()
 
@@ -17,7 +17,7 @@ async def generate(req: GenerateRequest):
         raise HTTPException(400, f"Unknown model: {model}")
 
     provider_name = model_cfg["provider"]
-    provider = PROVIDERS.get(provider_name)
+    provider = get_provider(provider_name)
 
     if not provider:
         raise HTTPException(500, f"Provider not enabled: {provider_name}")
