@@ -6,10 +6,12 @@
 !Dockerfile
 !app/
 !app/**
-!tests/
-!tests/**
 !terraform/
 !terraform/**
+!tests/
+!tests/**
+
+
 
 # Exclude unwanted files and folders
 *.terraform*
