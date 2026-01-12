@@ -47,3 +47,8 @@ curl -X POST http://localhost:8000/generate \
   }'
 
 ```
+
+
+sudo docker tag model-router:latest infraraja18/main-proj-acc:v0.1
+sudo docker push infraraja18/main-proj-acc:v0.1
+
