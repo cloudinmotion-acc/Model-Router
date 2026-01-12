@@ -24,7 +24,12 @@ pip install -r requirements.txt
 
 ### Setp-3
 
-Create a `.env` file and copy the contents from `.env.example` and replace with your keys
+Edit the config path
+<!-- Create a `.env` file and copy the contents from `.env.example` and replace with your keys -->
+```bash
+export OPENAI_API_KEY=xxx
+export ROUTER_CONFIG_PATH=$(pwd)/config/config.yaml
+```
 
 ### Step-4
 
