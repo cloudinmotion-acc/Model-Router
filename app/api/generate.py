@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException # pyright: ignore[reportMissingImports]
 from app.schemas import GenerateRequest, GenerateResponse
 from app.config.loader import load_router_config
 from app.providers.registry import get_provider

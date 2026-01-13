@@ -1,14 +1,14 @@
 import os
-from openai import AsyncOpenAI, OpenAI
+from openai import AsyncOpenAI
 from .base import BaseProvider
 
 
 class OpenAIProvider(BaseProvider):
 
     def __init__(self):
-        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY")) #
+        self.client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY")) # type: ignore # 
 
-    async def generate(self, prompt: str, model: str, parameters: dict):
+    async def generate(self, prompt: str, model: str, parameters: dict): # type: ignore
         response = await self.client.chat.completions.create(
             model=model,
             messages=[{"role": "user", "content": prompt}],
