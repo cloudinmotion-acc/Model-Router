@@ -25,10 +25,12 @@ pip install -r requirements.txt
 ### Setp-3
 
 Edit the config path
-<!-- Create a `.env` file and copy the contents from `.env.example` and replace with your keys -->
+<!-- Create a `.env` file and copy the contents from `.env.example` and replace with your keys , if using via .env file-->
+
 ```bash
+# If setting it as an ENV Variable
 export OPENAI_API_KEY=xxx
-export ROUTER_CONFIG_PATH=$(pwd)/config/config.yaml
+export ROUTER_CONFIG_PATH=$(pwd)/app/config/config.yaml
 ```
 
 ### Step-4
@@ -50,10 +52,4 @@ curl -X POST http://localhost:8000/generate \
     "prompt": "Say hello like a pirate",
     "model": "gpt-4o"
   }'
-```
-
-
-```bash
-sudo docker tag model-router:latest infraraja18/main-proj-acc:v0.1
-sudo docker push infraraja18/main-proj-acc:v0.1
 ```

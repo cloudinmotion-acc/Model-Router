@@ -4,7 +4,7 @@ import os
 
 
 def load_router_config():
-    path = os.getenv("ROUTER_CONFIG_PATH", "/etc/router/config.yaml")
+    path = os.getenv("ROUTER_CONFIG_PATH", "/app/app/config/config.yaml")
     with open(path, "r") as f:
         return yaml.safe_load(f)
 
