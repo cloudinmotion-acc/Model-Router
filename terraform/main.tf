@@ -11,11 +11,7 @@ resource "kubernetes_secret_v1" "llm_envs" {
   }
 
   data = {
-    DEFAULT_LLM_PROVIDER     = "openai"
     OPENAI_API_KEY           = var.openai_api_key
-    AZURE_OPENAI_API_KEY     = ""
-    AZURE_OPENAI_ENDPOINT    = ""
-    AZURE_OPENAI_DEPLOYMENT  = ""
   }
 
   type = "Opaque"
