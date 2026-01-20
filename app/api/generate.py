@@ -25,7 +25,8 @@ async def generate(req: GenerateRequest):
     result = await provider.generate(
         prompt=req.prompt,
         model=model,
-        parameters=req.parameters or {}
+        parameters=req.parameters or {},
+        state=req.state or {}
     )
 
     return result
