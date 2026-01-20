@@ -77,6 +77,6 @@ resource "kubernetes_service_v1" "server_service" {
       target_port = var.pod_port
     }
 
-    type = "NodePort"
+    type = "ClusterIP"
   }
 }

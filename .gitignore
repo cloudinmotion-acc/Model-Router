@@ -12,3 +12,10 @@ __pycache__/
 *.env
 *.log
 env/
+*.exe
+.DS_Store
+example.tf
+terraform.tfplan
+terraform.tfstate
+terraform.tfstate.*
+providers.tf*.dll
