@@ -6,6 +6,7 @@ class GenerateRequest(BaseModel):
     prompt: str
     model: Optional[str] = None
     parameters: Optional[Dict] = {}
+    state: Optional[Dict] = {}
 
 
 class GenerateResponse(BaseModel):
