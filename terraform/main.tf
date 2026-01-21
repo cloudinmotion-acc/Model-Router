@@ -11,7 +11,7 @@ resource "kubernetes_secret_v1" "llm_envs" {
   }
 
   data = {
-    OPENAI_API_KEY           = var.openai_api_key
+    OPENAI_API_KEY = var.openai_api_key
   }
 
   type = "Opaque"
