@@ -3,5 +3,7 @@ uvicorn
 pydantic
 httpx
 openai
+anthropic
+google-generativeai
 pyyaml
 python-dotenv
