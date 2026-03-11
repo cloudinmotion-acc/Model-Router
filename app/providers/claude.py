@@ -1,12 +1,12 @@
 import os
-import anthropic
+from anthropic import AsyncAnthropic
 from .base import BaseProvider
 
 
 class ClaudeProvider(BaseProvider):
 
     def __init__(self):
-        self.client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+        self.client = AsyncAnthropic(api_key=os.getenv("API_KEY"))
 
     async def generate(self, prompt: str, model: str, parameters: dict, state: dict = None): # type: ignore
         state = state or {}
@@ -20,7 +20,7 @@ class ClaudeProvider(BaseProvider):
         if "max_tokens" not in parameters:
             parameters["max_tokens"] = 1024
         
-        response = self.client.messages.create(
+        response = await self.client.messages.create(
             model=model,
             messages=messages,
             **parameters
@@ -34,3 +34,4 @@ class ClaudeProvider(BaseProvider):
                 "output_tokens": response.usage.output_tokens
             }
         }
+        

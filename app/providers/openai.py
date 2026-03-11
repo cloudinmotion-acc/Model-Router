@@ -6,7 +6,7 @@ from .base import BaseProvider
 class OpenAIProvider(BaseProvider):
 
     def __init__(self):
-        self.client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY")) # type: ignore # 
+        self.client = AsyncOpenAI(api_key=os.getenv("API_KEY")) # type: ignore
 
     async def generate(self, prompt: str, model: str, parameters: dict, state: dict = None): # type: ignore
         state = state or {}
