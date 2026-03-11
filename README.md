@@ -95,9 +95,9 @@ curl -X POST http://localhost:8000/generate \
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `prompt` | string | Yes | The input text/question |
-| `model` | string | No | Model to use (defaults to config default) |
-| `parameters` | object | No | Model-specific parameters (temperature, max_tokens, etc.) |
-| `state` | object | No | Conversation history for multi-turn interactions |
+| `model` | string | Yes | Model to use (defaults to config default) |
+| `parameters` | object | Optional | Model-specific parameters (temperature, max_tokens, etc.) |
+| `state` | object | Optional | Conversation history for multi-turn interactions |
 
 ### Examples
 
@@ -119,7 +119,7 @@ Edit `app/config/config.yaml` to customize available models:
 ```yaml
 default_model: gpt-5-nano
 models:
-  gpt-4o:
+  gpt-5-nano:
     provider: openai
   claude-3-5-sonnet-20241022:
     provider: claude
