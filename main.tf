@@ -11,6 +11,7 @@ resource "kubernetes_secret_v1" "llm_envs" {
   }
 
   data = {
+    DEFAULT_LLM_PROVIDER = lower(var.llm_provider)
     API_KEY = var.api_key
   }
 

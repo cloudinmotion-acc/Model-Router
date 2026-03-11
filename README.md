@@ -107,8 +107,7 @@ curl -X POST http://localhost:8000/generate \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": "Explain quantum computing",
-    "model": "gemini-3-flash-preview",
-    "parameters": {"temperature": 0.5}
+    "model": "gemini-3-flash-preview"
   }'
 ```
 
