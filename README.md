@@ -82,7 +82,7 @@ curl -X POST http://localhost:8000/generate \
 ```json
 {
   "text": "AI is technology that enables computers to learn and perform human-like tasks.",
-  "model": "gpt-4o",
+  "model": "gpt-5-nano",
   "usage": {
     "input_tokens": 8,
     "output_tokens": 15
